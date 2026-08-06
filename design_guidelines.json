@@ -1,0 +1,149 @@
+{
+  "project_name": "Premium Innovation Dashboard",
+  "theme_mode": "light",
+  "language": "hu",
+  "typography": {
+    "headings": {
+      "family": "Outfit, sans-serif",
+      "weights": ["500", "700"],
+      "usage": "Use for all H1-H4, KPI values, and key data points. Highly geometric and premium."
+    },
+    "body": {
+      "family": "Manrope, sans-serif",
+      "weights": ["400", "500", "600"],
+      "usage": "Clean, highly readable sans-serif for dashboard data, tables, and descriptions."
+    },
+    "rules": "Apply tracking-tight to headings. Never use Inter for headings. Use fluid typography clamp() logic for responsive scaling."
+  },
+  "colors": {
+    "background": {
+      "base": "#F0FDF4",
+      "alt": "#DCFCE7",
+      "description": "Very light mint/lime background. Gives a fresh, innovative feel."
+    },
+    "surface": {
+      "light": "#FFFFFF",
+      "dark_green": "#064E3B",
+      "deep_green": "#022C22",
+      "glass": "rgba(255, 255, 255, 0.7)",
+      "description": "Main panels are white for legibility. KPI cards and sidebar are deep, luxurious dark green."
+    },
+    "primary": {
+      "main": "#10B981",
+      "hover": "#059669",
+      "light": "#A7F3D0"
+    },
+    "accent": {
+      "lime": "#84CC16",
+      "mint": "#34D399",
+      "forest": "#047857"
+    },
+    "text": {
+      "on_light": "#022C22",
+      "on_light_muted": "#065F46",
+      "on_dark": "#ECFDF5",
+      "on_dark_muted": "#A7F3D0"
+    },
+    "status": {
+      "new": "#3B82F6",
+      "in_progress": "#F59E0B",
+      "implemented": "#10B981",
+      "rejected": "#EF4444"
+    }
+  },
+  "layouts": {
+    "overall": "Sidebar navigation on the left, Top fixed header (glassmorphism), and a main scrollable content area. Spacing must be generous (p-6 to p-10).",
+    "sidebar": "Fixed width (e.g., 280px), dark deep green background (#022C22), with light mint text for links.",
+    "header": "Sticky top, backdrop-blur-xl bg-white/70, containing the 'Frissítés' button with last update timestamp, and global period selectors.",
+    "grid": "Bento-style grid for the dashboard overview. 4 columns for KPIs (md:grid-cols-2 lg:grid-cols-4). 2 columns for charts."
+  },
+  "visual_enhancers": {
+    "shadows": "Subtle, soft layered shadows. e.g., shadow-[0_8px_30px_rgb(0,0,0,0.04)] for light panels. shadow-[0_10px_40px_rgb(16,185,129,0.1)] for active elements.",
+    "border_radius": "Large, friendly but enterprise radii. rounded-2xl or rounded-3xl for main panels. rounded-xl for internal cards.",
+    "borders": "1px solid rgba(16, 185, 129, 0.1) on light panels to define edges without heavy shadows.",
+    "glassmorphism": "Used on the sticky header and the detail drawer overlay. Must have backdrop-blur-xl and backdrop-saturate-150."
+  },
+  "components": {
+    "kpi_cards": {
+      "style": "Dark deep green background (#064E3B), bright mint/lime text for the numbers. Subtle hover lift (-translate-y-1) with a soft mint glow shadow.",
+      "content": "Title (small, uppercase, tracking-wider), Value (massive Outfit font), Trend indicator (arrow + percentage)."
+    },
+    "filter_chips": {
+      "style": "Pill-shaped (rounded-full). Unselected: white bg, border, dark text. Selected: dark green bg, white text.",
+      "usage": "Use for 'Feladat típus' (Innováció / Feladat / Összes)."
+    },
+    "charts": {
+      "library": "Recharts",
+      "style": "Use the theme colors. Donut chart for Status. Horizontal bar for Category. Area chart for Monthly trend with gradient fill (mint to transparent). Hide axis lines, use dashed grid lines.",
+      "tooltip": "Custom Recharts tooltip with rounded corners, dark background, and clear typography."
+    },
+    "detail_drawer": {
+      "style": "Sliding panel from the right (w-full max-w-2xl). White background, high elevation shadow. Header with status badge.",
+      "content": "Contains Title, Description, Expected Result, Comments, Submitter info, Status, Category, Date, Department, Priority."
+    },
+    "refresh_button": {
+      "style": "Primary button style. Icon (rotate/sync) + 'Adatok frissítése'.",
+      "interaction": "When clicked, show a spinning state and update the 'Utolsó frissítés: [timestamp]' text."
+    },
+    "data_table": {
+      "style": "Clean enterprise table. No vertical borders. Generous row padding (py-4). Status pills in rows. Hover effect on rows."
+    }
+  },
+  "motion": {
+    "library": "Framer Motion",
+    "page_transitions": "Fade in and slight slide up (y: 20 -> 0) on mount.",
+    "list_stagger": "Stagger children animations for KPI cards and table rows.",
+    "hover_states": "All interactive elements must have a transition (duration 200ms ease-out). Buttons scale down slightly on active (tap)."
+  },
+  "accessibility": {
+    "contrast": "Ensure text on dark green KPI cards meets WCAG AA standards (use white or very light mint).",
+    "data_testid": "Add data-testid attributes to all filters, buttons, and drawer toggles."
+  },
+  "media": {
+    "icons": "Use lucide-react. Stroke width 1.5 for a premium, delicate look.",
+    "avatars": "Use the provided executive portrait URLs for the top submitters list."
+  },
+  "image_urls": {
+    "avatars": [
+      {
+        "url": "https://images.pexels.com/photos/37148308/pexels-photo-37148308.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150&w=150",
+        "category": "avatar",
+        "description": "Male executive portrait for top submitter"
+      },
+      {
+        "url": "https://images.pexels.com/photos/27086922/pexels-photo-27086922.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150&w=150",
+        "category": "avatar",
+        "description": "Female executive portrait for top submitter"
+      }
+    ],
+    "textures": [
+      {
+        "url": "https://images.unsplash.com/photo-1660495056016-f728ce15a3f2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHNtb290aCUyMG1pbnQlMjBncmVlbiUyMG9yZ2FuaWMlMjB0ZXh0dXJlfGVufDB8fHx8MTc4NDQzNzU0Nnww&ixlib=rb-4.1.0&q=85",
+        "category": "background",
+        "description": "Abstract mint green organic texture, can be used at very low opacity (5%) in the sidebar or header for premium feel."
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Install required fonts: `yarn add @fontsource/outfit @fontsource/manrope` and configure in tailwind.config.js.",
+    "Use pure HTML/Tailwind for main structural layouts to allow deep customization, but use Recharts for data visualization.",
+    "Implement the left sidebar fixed, and right content area scrollable.",
+    "For the KPI cards, ensure they use the dark green background (#064E3B) with white/light-mint text, contrasting heavily with the light mint page background (#F0FDF4).",
+    "Create dummy data to simulate the Excel data load. Include different statuses, categories, departments, and programs.",
+    "Implement the 'Frissítés' (Refresh) button with a mock async loading state (setTimeout) that updates the 'Utolsó frissítés' timestamp.",
+    "Implement the Idea Drawer using Framer Motion (AnimatePresence) sliding in from the right edge of the screen.",
+    "The UI MUST be in Hungarian as requested (e.g., 'Összefoglaló', 'Innováció', 'Feladat', 'Beállítások').",
+    "Include a 'Programok' section visually distinguishing VIP, Mentor, Futurebet, Futurebet2.0, InnoChallenge.",
+    "Build standard filter chips for 'Feladat típus' (Innováció / Feladat / Összes)."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. Avoid this: make creative, distinctive frontends.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition. Eg: `transition: all`.",
+    "You MUST NOT center align the app container.",
+    "Every interaction needs micro-animations.",
+    "Use 2-3x more spacing than feels comfortable.",
+    "Customize scrollbars; NO gutter."
+  ]
+}
